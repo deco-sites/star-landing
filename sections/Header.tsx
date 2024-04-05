@@ -1,7 +1,7 @@
-import Image from "apps/website/components/Image.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from 'apps/website/components/Image.tsx';
+import type { ImageWidget } from 'apps/admin/widgets.ts';
 
-type Type = "dark" | "light";
+type Type = 'dark' | 'light';
 
 export interface CTA {
   id?: string;
@@ -19,7 +19,7 @@ export interface Nav {
   background?: {
     src?: ImageWidget;
     alt?: string;
-  }
+  };
 
   navigation?: {
     links: {
@@ -31,13 +31,13 @@ export interface Nav {
 }
 
 export const ColorType: Record<Type, string> = {
-  "dark": "base-content",
-  "light": "base-100",
+  dark: 'base-content',
+  light: 'base-100',
 };
 
-export const StyleType: Record<"background" | "color", string> = {
-  "background": "bg-",
-  "color": "text-",
+export const StyleType: Record<'background' | 'color', string> = {
+  background: 'bg-',
+  color: 'text-',
 };
 
 const generateLineStyles = (position: string) => `
@@ -45,34 +45,31 @@ const generateLineStyles = (position: string) => `
 `;
 
 const lineStyles = [
-  generateLineStyles("top-[-0.7rem]") +
-  "peer-checked:translate-y-[0.7rem] peer-checked:rotate-[45deg]",
-  generateLineStyles("top-[-0.35rem]") + "peer-checked:opacity-0",
-  generateLineStyles("top-[0]") +
-  "peer-checked:-translate-y-[0.2rem] peer-checked:-rotate-[45deg]",
+  generateLineStyles('top-[-0.7rem]') +
+    'peer-checked:translate-y-[0.7rem] peer-checked:rotate-[45deg]',
+  generateLineStyles('top-[-0.35rem]') + 'peer-checked:opacity-0',
+  generateLineStyles('top-[0]') +
+    'peer-checked:-translate-y-[0.2rem] peer-checked:-rotate-[45deg]',
 ];
 
 export default function Haader({
   logo = {
-    src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
-    alt: "Logo",
+    src: 'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04',
+    alt: 'Logo',
   },
   background = {
-    src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
-    alt: "Logo",
+    src: 'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04',
+    alt: 'Logo',
   },
   navigation = {
     links: [
-      { label: "Home", url: "/" },
-      { label: "About us", url: "/" },
-      { label: "Princing", url: "/" },
-      { label: "Contact", url: "/" },
+      { label: 'Home', url: '/#' },
+      { label: 'Videos', url: '/#videos' },
+      { label: 'Citações', url: '/#quotes' },
     ],
     buttons: [
-      { id: "change-me-1", href: "/", text: "Change me", outline: false },
-      { id: "change-me-2", href: "/", text: "Change me", outline: true },
+      { id: 'change-me-1', href: '/', text: 'Change me', outline: false },
+      { id: 'change-me-2', href: '/', text: 'Change me', outline: true },
     ],
   },
 }: Nav) {
@@ -81,7 +78,12 @@ export default function Haader({
       <nav class="container lg:mx-auto mx-4">
         <div class="flex gap-8 items-center justify-between py-4">
           <a href="/">
-            <Image src={logo.src || ""} width={100} height={28} alt={logo.alt} />
+            <Image
+              src={logo.src || ''}
+              width={100}
+              height={28}
+              alt={logo.alt}
+            />
           </a>
 
           <label
@@ -112,9 +114,9 @@ export default function Haader({
                       key={item?.id}
                       id={item?.id}
                       href={item?.href}
-                      target={item?.href.includes("http") ? "_blank" : "_self"}
+                      target={item?.href.includes('http') ? '_blank' : '_self'}
                       class={`font-normal btn btn-primary ${
-                        item.outline && "btn-outline"
+                        item.outline && 'btn-outline'
                       }`}
                     >
                       {item?.text}
@@ -145,9 +147,9 @@ export default function Haader({
                   key={item?.id}
                   id={item?.id}
                   href={item?.href}
-                  target={item?.href.includes("http") ? "_blank" : "_self"}
+                  target={item?.href.includes('http') ? '_blank' : '_self'}
                   class={`font-normal btn btn-primary ${
-                    item.outline && "btn-outline"
+                    item.outline && 'btn-outline'
                   }`}
                 >
                   {item?.text}
@@ -157,9 +159,12 @@ export default function Haader({
           </ul>
         </div>
       </nav>
-      <Image src={background.src || ""} width="100%" height="auto" alt={logo.alt} />
-
+      <Image
+        src={background.src || ''}
+        width="100%"
+        height="auto"
+        alt={logo.alt}
+      />
     </header>
-    
   );
 }
