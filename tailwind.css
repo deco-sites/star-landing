@@ -270,6 +270,175 @@
       opacity: 0;
     }
   }
+
+  .lightsaber {
+    position: relative;
+  }
+
+  .lightsaber label {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 88;
+    text-indent: -9999px;
+    width: 15px;
+    height: 50px;
+    border-bottom: solid 4px grey;
+    border-top: solid 5px grey;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    background: rgb(226, 226, 226);
+    background: linear-gradient(to right, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%);
+  }
+
+  .lightsaber .switch {
+    background: #B94A37;
+    width: 5px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    left: 13px;
+    transition: left 200ms;
+    border-radius: 10px;
+  }
+
+  .lightsaber input[type=checkbox] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 77;
+  }
+
+  .lightsaber .plasma {
+    transition: height 300ms, ;
+    border-radius: 12px 12px 0 0;
+    position: absolute;
+    bottom: 55px;
+    left: 2px;
+    width: 10px;
+    display: block;
+    filter: blur(1px);
+    -moz-filter: blur(1px);
+    -webkit-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    height: 0;
+  }
+
+
+  .lightsaber input[type=checkbox]:checked~div.plasma {
+    height: 250px;
+  }
+
+  .lightsaber input[type=checkbox]:hover~div.switch {
+    background: #c09853;
+    left: 12px;
+  }
+
+  .lightsaber input[type=checkbox]:checked~div.switch {
+    background: #468847;
+  }
+
+  .green {
+    background: rgb(135, 220, 90);
+    /* Old browsers */
+    background: linear-gradient(to right, rgb(135, 220, 90) 0%, rgb(254, 254, 254) 30%, rgb(254, 254, 254) 50%, rgb(254, 254, 254) 70%, rgb(135, 220, 90) 100%);
+    animation-name: green;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  .red {
+    background: rgb(229, 17, 21);
+    /* Old browsers */
+    background: linear-gradient(to right, rgba(229, 17, 21, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 47%, rgba(254, 254, 254, 1) 71%, rgba(229, 17, 21, 1) 100%);
+    animation-name: red;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  .purple {
+    background: rgb(202, 116, 221);
+    /* Old browsers */
+    background: linear-gradient(to right, rgba(202, 116, 221, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 47%, rgba(254, 254, 254, 1) 71%, rgba(202, 116, 221, 1) 100%);
+    animation-name: purple;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  .blue {
+    background: rgb(55, 132, 214);
+    /* Old browsers */
+    background: linear-gradient(to right, rgba(55, 132, 214, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 47%, rgba(254, 254, 254, 1) 71%, rgba(55, 132, 214, 1) 100%);
+    animation-name: blue;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  /* Animations */
+  @keyframes green {
+    from {
+      box-shadow: 0 0 10px #7EC855;
+    }
+
+    50% {
+      box-shadow: 0 0 16px #7EC855;
+    }
+
+    to {
+      box-shadow: 0 0 10px #7EC855;
+    }
+  }
+
+  @keyframes red {
+    from {
+      box-shadow: 0 0 10px #e51115;
+    }
+
+    50% {
+      box-shadow: 0 0 16px #e51115;
+    }
+
+    to {
+      box-shadow: 0 0 10px #e51115;
+    }
+  }
+
+  @keyframes purple {
+    from {
+      box-shadow: 0 0 10px #ca74dd;
+    }
+
+    50% {
+      box-shadow: 0 0 16px #ca74dd;
+    }
+
+    to {
+      box-shadow: 0 0 10px #ca74dd;
+    }
+  }
+
+  @keyframes blue {
+    from {
+      box-shadow: 0 0 10px #3784d6;
+    }
+
+    50% {
+      box-shadow: 0 0 16px #3784d6;
+    }
+
+    to {
+      box-shadow: 0 0 10px #3784d6;
+    }
+  }
+
+
 }
 
 @layer utilities {
