@@ -150,7 +150,7 @@ export default function Sabers({
                     )}`}
                   >
                     <div className="lightsaber">
-                      <label htmlFor={item.color}></label>
+                      <label class="animate-pulse" htmlFor={item.color}></label>
                       <input
                         title={`sabre ${item.color}`}
                         type="checkbox"

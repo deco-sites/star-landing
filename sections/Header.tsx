@@ -66,6 +66,7 @@ export default function Haader({
       { label: 'Home', url: '/#' },
       { label: 'Videos', url: '/#videos' },
       { label: 'Citações', url: '/#quotes' },
+      { label: 'Sabres', url: '/#sabers' },
     ],
     // buttons: [
     //   { id: 'change-me-1', href: '#', text: 'Change me', outline: false },
