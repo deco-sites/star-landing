@@ -23,18 +23,20 @@ const callback = () => {
 window.addEventListener('scroll', callback, { once: true });
 `;
 
-export interface Quote {
-  quote?: {
-    quotes: {
-      author?: string;
-      quote?: string;
-      character: string;
+/**
+ * @titleBy saber
+ */
+export interface Saber {
+  saber?: {
+    sabers: {
+      /**
+       * @title Sabre
+       */
+      saber?: string;
+      desc?: string;
+      character?: string;
       color?: 'blue' | 'green' | 'red' | 'purple';
-      open: boolean;
-      avatar?: {
-        src?: ImageWidget;
-        alt?: string;
-      };
+      open?: boolean;
     }[];
   };
 }
@@ -82,33 +84,23 @@ export default function Sabers({
   saber = {
     sabers: [
       {
-        author: 'Sabre Verde',
-        quote: 'diplomacia, a negociação e a disciplina mental',
+        saber: 'Sabre Verde',
+        desc: 'diplomacia, a negociação e a disciplina mental',
         character: 'Yoda',
         color: 'green',
         open: true,
-
-        avatar: {
-          src: 'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04',
-          alt: 'Logo',
-        },
       },
 
       {
-        author: 'Sabre Vermelho',
-        quote: 'a gema é corrompida',
+        saber: 'Sabre Vermelho',
+        desc: 'a gema é corrompida',
         character: 'Darth Vader',
         color: 'red',
         open: false,
-
-        avatar: {
-          src: 'https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04',
-          alt: 'Logo',
-        },
       },
     ],
   },
-}: Sabers) {
+}: Saber) {
   const id = `saber-${useId()}`;
   return (
     <>
@@ -120,9 +112,7 @@ export default function Sabers({
         <ul class="flex gap-3 max-w-7xl mx-auto overflow-x-auto">
           {saber.sabers?.map((item) => (
             <li
-              key={item?.id}
               id={item?.id}
-              href={item?.href}
               // target={item?.href.includes("http") ? "_blank" : "_self"}
               class={`flex font-normal w-full mt-10 mb-20 min-w-[83%] max-w-[210px] sm:max-w-[100%] sm:min-w-[320px] ${
                 item.outline && 'btn-outline'
@@ -134,7 +124,7 @@ export default function Sabers({
                   'border'
                 )}`}
               >
-                <h4 class="self-start text-1xl">{item.author}</h4>
+                <h4 class="self-start text-1xl">{item.saber}</h4>
 
                 {/* <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1">
                 <span class="flex w-full bg-gray-900 text-white rounded p-2">
@@ -161,13 +151,15 @@ export default function Sabers({
                       <div className={`plasma ${item.color}`}></div>
                     </div>
                   </div>
-                  <h3 class="flex items-center justify-center bg-[#000513] p-3 -mt-12 text-2xl">
-                    {item.character}
-                  </h3>
+                  {item.character && (
+                    <h3 class="flex items-center justify-center bg-[#000513] p-3 -mt-12 text-2xl">
+                      {item.character}
+                    </h3>
+                  )}
                 </div>
 
                 <div class="flex flex-col items-end self-start pt-6">
-                  <p class="text-sm text-right max-w-80">{item.quote}</p>
+                  <p class="text-sm text-right max-w-80">{item.desc}</p>
                 </div>
               </div>
             </li>
