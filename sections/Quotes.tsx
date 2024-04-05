@@ -26,8 +26,6 @@ export interface Quote {
 }
 
 const bgAvatar = (color: string, type?: 'bg' | 'border' = 'bg') => {
-  let value = null;
-
   if (type === 'bg') {
     if (color === 'blue') return 'bg-[#3592D6]';
     if (color === 'green') return 'bg-[#35D66C]';
