@@ -121,9 +121,10 @@ export default function Quotes({
                     width="100%"
                     height="auto"
                     alt={item.avatar.alt}
+                    class="hover:animate-pulse"
                   />
                 </div>
-                <h3 class="flex items-center justify-center w-96 h-16 bg-[#000513] p-3 -mt-12 text-2xl">
+                <h3 class="flex items-center justify-center w-96 h-16 bg-[#000513] p-3 -mt-12 text-2xl z-10">
                   {item.character}
                 </h3>
               </div>
