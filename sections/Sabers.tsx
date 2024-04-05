@@ -7,7 +7,17 @@ const callback = () => {
   const elem = document.getElementById("${id}");
   const inputs = document.querySelectorAll("#sabers input");
   const audio = document.getElementById("audio");
-  inputs.forEach(item => item.addEventListener('click', ()=> audio.play()));
+  const audio2 = document.getElementById("audio2");
+  inputs.forEach(item => item.addEventListener('click', ()=> {
+    if(!audio.paused && !audio2.paused) {
+      audio2.currentTime = 0;
+      return audio2.play();
+    }
+    if(!audio.paused) return audio2.play();
+    audio.play();
+
+   
+  }));
 }
 
 window.addEventListener('scroll', callback, { once: true });
@@ -105,16 +115,16 @@ export default function Sabers({
       <div
         id="sabers"
         data-id={id}
-        class="flex gap-8 items-center justify-between py-8"
+        class="r-scroll flex gap-8 items-center justify-between py-8"
       >
-        <ul class="flex gap-3 max-w-7xl mx-auto">
+        <ul class="flex gap-3 max-w-7xl mx-auto overflow-x-auto">
           {saber.sabers?.map((item) => (
             <li
               key={item?.id}
               id={item?.id}
               href={item?.href}
               // target={item?.href.includes("http") ? "_blank" : "_self"}
-              class={`flex font-normal w-full mt-10 mb-20 ${
+              class={`flex font-normal w-full mt-10 mb-20 min-w-[83%] max-w-[210px] sm:max-w-[100%] sm:min-w-[320px] ${
                 item.outline && 'btn-outline'
               } ${gradientQuote(item.color)} rounded p-1`}
             >
@@ -164,6 +174,12 @@ export default function Sabers({
           ))}
         </ul>
         <audio id="audio" preload="auto">
+          <source
+            src="https://assets.codepen.io/308367/coolsaber.mp3"
+            type="audio/mp3"
+          />
+        </audio>
+        <audio id="audio2" preload="auto">
           <source
             src="https://assets.codepen.io/308367/coolsaber.mp3"
             type="audio/mp3"

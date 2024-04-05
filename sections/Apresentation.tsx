@@ -35,6 +35,9 @@ const callback = () => {
         
         this.main = document.querySelector('.section-starwars');
 
+        this.btn = document.querySelector('#change-me-2');
+        console.log(this.btn);
+
         this.reset();
 
         this.start.addEventListener('click', () => {

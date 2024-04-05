@@ -41,7 +41,7 @@ export const StyleType: Record<'background' | 'color', string> = {
 };
 
 const generateLineStyles = (position: string) => `
-  absolute ${position} z-50 block h-0.5 w-7 bg-black transition-all duration-200 ease-out 
+  absolute ${position} z-50 block h-0.5 w-7 bg-white transition-all duration-200 ease-out 
 `;
 
 const lineStyles = [
@@ -67,15 +67,15 @@ export default function Haader({
       { label: 'Videos', url: '/#videos' },
       { label: 'Citações', url: '/#quotes' },
     ],
-    buttons: [
-      { id: 'change-me-1', href: '/', text: 'Change me', outline: false },
-      { id: 'change-me-2', href: '/', text: 'Change me', outline: true },
-    ],
+    // buttons: [
+    //   { id: 'change-me-1', href: '#', text: 'Change me', outline: false },
+    //   { id: 'change-me-2', href: '#', text: 'Change me', outline: true },
+    // ],
   },
 }: Nav) {
   return (
     <header className="bg-[#283045]">
-      <nav class="container lg:mx-auto mx-4">
+      <nav class="container lg:mx-auto">
         <div class="flex gap-8 items-center justify-between py-4">
           <a href="/">
             <Image
@@ -98,7 +98,7 @@ export default function Haader({
               &nbsp;
             </div>
             <div class="duration-500 fixed h-full overflow-y-auto overscroll-y-none peer-checked:translate-x-0 right-0 top-0 transition translate-x-full w-full z-40">
-              <div class="bg-base-100 flex flex-col float-right gap-8 min-h-full pt-12 px-6 shadow-2xl w-1/2">
+              <div class="bg-[#283045] flex flex-col float-right gap-8 min-h-full pt-12 px-6 shadow-2xl w-1/2">
                 <ul class="flex flex-col gap-8">
                   {navigation?.links.map((link) => (
                     <li>

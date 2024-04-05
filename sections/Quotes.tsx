@@ -94,12 +94,14 @@ export default function Quotes({
             } ${gradientQuote(item.color)} rounded p-1`}
           >
             <div
-              class={`grid grid-cols-3 justify-between items-center bg-black/90 p-8 w-full border-2 border-solid ${bgAvatar(
+              class={`grid grid-cols-1 lg:grid-cols-3 justify-between items-center bg-black/90 p-8 w-full border-2 border-solid ${bgAvatar(
                 item.color,
                 'border'
               )}`}
             >
-              <h4 class="self-start text-3xl">{item.author}</h4>
+              <h4 class="self-start text-2xl text-center mb-3 lg:text-3xl lg:text-left lg:mb-0">
+                {item.author}
+              </h4>
 
               {/* <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1">
                 <span class="flex w-full bg-gray-900 text-white rounded p-2">
@@ -107,9 +109,9 @@ export default function Quotes({
                 </span>
               </button> */}
 
-              <div class="flex flex-col items-center justify-center -mt-20 -mb-10">
+              <div class="flex flex-col items-center justify-center lg:-mt-20 lg:-mb-10">
                 <div
-                  class={`flex items-center justify-between rounded-full w-[420px] h-[420px] ${bgAvatar(
+                  class={`flex items-center justify-between rounded-full lg:w-[420px] lg:h-[420px] ${bgAvatar(
                     item.color,
                     'bg'
                   )}`}
@@ -122,7 +124,7 @@ export default function Quotes({
                     class="hover:animate-pulse"
                   />
                 </div>
-                <h3 class="flex items-center justify-center w-96 h-16 bg-[#000513] p-3 -mt-12 text-2xl z-10">
+                <h3 class="flex items-center justify-center lg:w-96 h-16 bg-[#000513] p-3 -mt-12 text-2xl z-10">
                   {item.character}
                 </h3>
               </div>

@@ -105,7 +105,7 @@ export default function FooterStar({
 }: Props) {
   return (
     <div class="mt-6 text-sm relative">
-      <div class="lg:container lg:mx-auto md:max-w-6xl absolute left-0 right-0 bottom-0 py-6">
+      <div class="lg:container lg:mx-auto md:max-w-6xl absolute left-0 right-0 bottom-0 py-6 px-3 xl:px-0 ">
         <p>Landing page star wars</p>
       </div>
       <Image
