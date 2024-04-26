@@ -26,7 +26,7 @@ export interface Nav {
       label?: string;
       url?: string;
     }[];
-    buttons: CTA[];
+    buttons?: CTA[];
   };
 }
 
@@ -77,7 +77,7 @@ export default function Haader({
   return (
     <header className="bg-[#283045]">
       <nav class="container lg:mx-auto">
-        <div class="flex gap-8 items-center justify-between py-4">
+        <div class="flex gap-8 items-center justify-between py-4 px-3 lg:px-0">
           <a href="/">
             <Image src={logo.src || ''} width={92} height={49} alt={logo.alt} />
           </a>
