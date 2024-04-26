@@ -70,17 +70,38 @@ const callback = () => {
 `;
 
 export interface Props {
-  title: string;
-  description: string;
-  button: string;
+  title?: string;
+  subtitle?: string;
+  paragraphs: {
+    label: string;
+  }[];
 }
 
-export default function Apresentation(props: Props) {
-  const {
-    title = 'Teste',
-    description = 'Descricao',
-    button = 'Aceitar',
-  } = props;
+export default function Apresentation({
+  title = 'Episódio IV',
+  subtitle = 'UMA NOVA ESPERANÇA',
+  paragraphs = [
+    {
+      label: `É um período de guerra civil. Partindo de uma base secreta,
+                    naves rebeldes atacam e conquistam sua primeira vitória
+                    contra o perverso Império Galáctico.`,
+    },
+    {
+      label: `
+                    Durante a batalha, espiões rebeldes conseguem roubar os
+                    planos secretos da arma decisiva do Império, a ESTRELA DA
+                    MORTE, uma estação espacial blindada com poder suficiente
+                    para destruir um planeta inteiro.`,
+    },
+    {
+      label: `
+                    Perseguida pelos sinistros agentes do Império, a princesa
+                    Leia, apressa-se em voltar para casa a bordo de sua nave
+                    estelar, protegendo os planos roubados que podem salvar seu
+                    povo e restaurar a liberdade na galáxia....`,
+    },
+  ],
+}: Props) {
   const id = `cookie-consent-${useId()}`;
   return (
     <>
@@ -125,28 +146,12 @@ export default function Apresentation(props: Props) {
 
               <section className="titles">
                 <div contenteditable="true" spellcheck="false">
-                  <h5>Episódio IV</h5>
-                  <h2>UMA NOVA ESPERANÇA</h2>
+                  {title && <h5>{title}</h5>}
+                  {subtitle && <h2>{subtitle}</h2>}
 
-                  <p>
-                    É um período de guerra civil. Partindo de uma base secreta,
-                    naves rebeldes atacam e conquistam sua primeira vitória
-                    contra o perverso Império Galáctico.
-                  </p>
-
-                  <p>
-                    Durante a batalha, espiões rebeldes conseguem roubar os
-                    planos secretos da arma decisiva do Império, a ESTRELA DA
-                    MORTE, uma estação espacial blindada com poder suficiente
-                    para destruir um planeta inteiro.
-                  </p>
-
-                  <p>
-                    Perseguida pelos sinistros agentes do Império, a princesa
-                    Leia, apressa-se em voltar para casa a bordo de sua nave
-                    estelar, protegendo os planos roubados que podem salvar seu
-                    povo e restaurar a liberdade na galáxia....
-                  </p>
+                  {paragraphs.map((item) => (
+                    <p>{item.label}</p>
+                  ))}
                 </div>
               </section>
 
