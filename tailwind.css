@@ -160,6 +160,23 @@
     backface-visibility: hidden;
   }
 
+  @media screen and (max-width:448px) {
+
+    .starwars .titles,
+    .starwars .start {
+      font-size: 140%;
+    }
+
+    .starwars .intro {
+      font-size: 120%;
+    }
+
+    .starwars .intro br {
+      display: none;
+    }
+  }
+
+
   @-webkit-keyframes intro {
     0% {
       opacity: 0;
